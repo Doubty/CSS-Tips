@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Criando um tooltip animado com CSS clip-path</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    p {
+      text-align: justify;
+    }
+
+    body {
+      background: #ffffe7;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    }
+
+    .tooltip {
+      background: #00b6ff;
+      color: white;
+      padding: 1em;
+      border-radius: 10px;
+      width: 250px;
+      clip-path: circle(8% at 90% 10%);
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+    }
+
+    .tooltip:hover {
+      clip-path: circle(100%);
+    }
+
+    .tooltip:hover span {
+      opacity: 0;
+    }
+
+    .icon {
+      float: right;
+      font-weight: bold;
+      margin-right: 3%;
+      transition: opacity 0.3s;
+    }
+  </style>
+  <body>
+    <div class="tooltip">
+      <span class="icon">i</span>
+      <h1>Olá!</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
+        exercitationem voluptates nulla soluta repellendus officiis, dignissimos
+        blanditiis reprehenderit vero molestias et commodi veniam? Eligendi, ad
+        iste quam pariatur aspernatur fugit!
+      </p>
+    </div>
+  </body>
+</html>
